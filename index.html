@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>هل بتحبني؟ 💘</title>
+  <title>for you؟ 💘</title>
   <link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet">
   <style>
     * {
@@ -37,7 +37,7 @@
       position: relative;
       width: 100%;
       max-width: 320px;
-      height: 120px;
+      height: 200px;
       z-index: 2;
     }
 
@@ -65,6 +65,8 @@
       background: #fff0f5;
       color: #ff5e62;
       z-index: 1;
+      top: 50px;
+      left: 10px;
     }
 
     #message {
@@ -163,7 +165,7 @@
 
     noBtn.addEventListener('mouseover', () => {
       const maxX = window.innerWidth - noBtn.offsetWidth;
-      const maxY = window.innerHeight - noBtn.offsetHeight - 100;
+      const maxY = window.innerHeight - noBtn.offsetHeight;
       const newX = Math.random() * maxX;
       const newY = Math.random() * maxY;
       noBtn.style.left = `${newX}px`;
