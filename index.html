@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>for you؟ 💘</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet">
+  <title>هل بتحبني؟ 💘</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -13,8 +13,8 @@
     }
 
     body {
-      background: linear-gradient(135deg, #ffd6ec 0%, #ff9eb5 50%, #ffa5a5 100%);
-      font-family: 'Lateef', cursive;
+      background: radial-gradient(circle at top, #ffe0f0, #ff99c8, #ff66a5);
+      font-family: 'Amiri', serif;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -25,12 +25,12 @@
     }
 
     h1 {
-      color: #6a0037;
-      font-size: 3em;
-      margin-bottom: 40px;
+      color: #72003e;
+      font-size: 2.8em;
+      margin-bottom: 30px;
       padding: 0 20px;
       z-index: 2;
-      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+      text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.4);
     }
 
     .buttons {
@@ -42,14 +42,14 @@
     }
 
     button {
-      padding: 18px 28px;
+      padding: 16px 26px;
       font-size: 22px;
       border: none;
-      border-radius: 40px;
+      border-radius: 50px;
       cursor: pointer;
       transition: all 0.3s ease;
       position: absolute;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
 
     #yes-btn {
@@ -64,9 +64,10 @@
     #no-btn {
       background: #fff0f5;
       color: #ff5e62;
-      z-index: 1;
+      z-index: 1000;
       top: 50px;
-      left: 10px;
+      left: 20px;
+      position: fixed;
     }
 
     #message {
@@ -153,8 +154,8 @@
 
   <div class="buttons">
     <button id="yes-btn">آه بحبك ❤️</button>
-    <button id="no-btn">لأ</button>
   </div>
+  <button id="no-btn">لأ</button>
 
   <div id="message">كنت عارف إنك بتحبني 😘🌹</div>
 
