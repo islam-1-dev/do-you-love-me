@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>هل بتحبني؟ 💘</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ffd6ec 0%, #ff9eb5 50%, #ffa5a5 100%);
+      font-family: 'Lateef', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    h1 {
+      color: #6a0037;
+      font-size: 3em;
+      margin-bottom: 40px;
+      padding: 0 20px;
+      z-index: 2;
+      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .buttons {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+      height: 120px;
+      z-index: 2;
+    }
+
+    button {
+      padding: 18px 28px;
+      font-size: 22px;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: absolute;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    #yes-btn {
+      background: linear-gradient(to right, #ff0066, #ff5e62);
+      color: white;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 10px;
+      z-index: 3;
+    }
+
+    #no-btn {
+      background: #fff0f5;
+      color: #ff5e62;
+      z-index: 1;
+    }
+
+    #message {
+      display: none;
+      font-size: 30px;
+      margin-top: 40px;
+      color: #b4004e;
+      z-index: 2;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .floaty {
+      position: absolute;
+      animation: floatUp 5s ease-in-out forwards;
+      z-index: 1;
+    }
+
+    .heart, .flower {
+      width: 30px;
+      height: 30px;
+      opacity: 0.85;
+    }
+
+    .heart {
+      background-color: #ff1744;
+      transform: rotate(45deg);
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: #ff1744;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -15px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -15px;
+      top: 0;
+    }
+
+    .flower {
+      background: radial-gradient(circle, #ffe4ec 40%, #ff007f 80%);
+      border-radius: 50%;
+    }
+
+    @keyframes floatUp {
+      0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-100vh) scale(0.5);
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.2em;
+      }
+      button {
+        font-size: 18px;
+        padding: 14px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>لو بتحبني دوس على "آه بحبك" ❤️<br>لا لا متدوسش ع التاني ده خالص 😢</h1>
+
+  <div class="buttons">
+    <button id="yes-btn">آه بحبك ❤️</button>
+    <button id="no-btn">لأ</button>
+  </div>
+
+  <div id="message">كنت عارف إنك بتحبني 😘🌹</div>
+
+  <script>
+    const yesBtn = document.getElementById('yes-btn');
+    const noBtn = document.getElementById('no-btn');
+    const message = document.getElementById('message');
+
+    noBtn.addEventListener('mouseover', () => {
+      const maxX = window.innerWidth - noBtn.offsetWidth;
+      const maxY = window.innerHeight - noBtn.offsetHeight - 100;
+      const newX = Math.random() * maxX;
+      const newY = Math.random() * maxY;
+      noBtn.style.left = `${newX}px`;
+      noBtn.style.top = `${newY}px`;
+    });
+
+    yesBtn.addEventListener('click', () => {
+      message.style.display = 'block';
+      yesBtn.disabled = true;
+      yesBtn.innerText = "بحبك أكتر 💘";
+
+      const createEffect = () => {
+        const el = document.createElement('div');
+        const isHeart = Math.random() > 0.4;
+        el.classList.add('floaty', isHeart ? 'heart' : 'flower');
+
+        el.style.left = `${Math.random() * 100}vw`;
+        el.style.bottom = `0`;
+        el.style.width = `${20 + Math.random() * 20}px`;
+        el.style.height = el.style.width;
+
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 5000);
+      };
+
+      for (let i = 0; i < 100; i++) {
+        setTimeout(createEffect, i * 50);
+      }
+    });
+  </script>
+
+</body>
+</html>
